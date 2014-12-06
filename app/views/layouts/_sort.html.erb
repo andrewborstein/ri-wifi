@@ -1,0 +1,13 @@
+<div class="sort-buttons text-center col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+	<div class="btn-group btn-grp-justified">
+		<%= link_to fastest_path, class: 'btn btn-default' do %>
+	    	<i class="fa fa-tachometer"></i><span class="hidden-xs"> Fastest</span>
+	    <% end %>
+		<%= link_to fastest_path, class: 'btn btn-default disabled' do %>
+	    	<i class="fa fa-location-arrow"></i><span class="hidden-xs"> Closest</span>
+	    <% end %>
+	    <%= link_to root_path, class: 'btn btn-default' do %>
+	    	<i class="fa fa-list-ul"></i><span class="hidden-xs"> Alphabetical</span>
+	    <% end %>
+	</div>
+</div>

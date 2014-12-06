@@ -1,0 +1,81 @@
+
+
+    <div class="panel-body">
+
+      
+      <%= form_for(@spot) do |f| %>
+        
+        <% if @spot.errors.any? %>
+        <div class="form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+          <div id="error_explanation">
+            <h2><%= pluralize(@spot.errors.count, "error") %> prohibited this spot from being saved:</h2>
+
+            <ul>
+            <% @spot.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        
+        <div class="form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+          <div class="page-header">
+            <h1>Location</h1>
+          </div>
+          <h4>Name</h4>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'The Coffee Cabana' %>
+        </div>
+        <div class="form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+          <h4>Address</h4>
+          <%= f.text_field :address, class: 'form-control', placeholder: '123 Main St. Providence, RI 02906' %>
+        </div>
+        <div class="form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+          <div class="page-header">
+            <h1>WiFi</h1>
+          </div>
+          <h4>SSID (Network Name)</h4>
+          <%= f.text_field :ssid, class: 'form-control', placeholder: 'linksys' %>
+        </div>
+        <div class="form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+          <h4>Password</h4>
+          <%= f.text_field :pw, class: 'form-control', placeholder: '12345678' %>
+          <div class="pw-options">
+            <span><%= f.check_box :pw_open %> &nbsp;Open Network?</span> 
+            <span><%= f.check_box :pw_login %> &nbsp;Login Page?</span>
+          </div>
+        </div>
+       <div class="form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+          <h4>Download Speed (mb/s)</h4>
+          <%= f.number_field :dl, class: 'form-control', placeholder: '15' %>
+        </div>
+        <div class="form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+          <h4>Upload Speed (mb/s)</h4>
+          <%= f.number_field :ul, class: 'form-control', placeholder: '5' %>
+        </div>
+        
+        <div class="form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+          <div class="page-header">
+            <h1>Links</h1>
+          </div>
+          <h4>Yelp URL</h4>
+          <%= f.text_field :yelp, class: 'form-control', placeholder: 'http://yelp.com/biz/the-coffee-cabana-pvd' %>
+        </div>
+        <div class="form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+          <h4>Facebook URL</h4>
+          <%= f.text_field :facebook, class: 'form-control', placeholder: 'https://www.facebook.com/pages/coffeecabanapvd' %>
+        </div>
+        <div class="form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+          <h4>Website URL</h4>
+          <%= f.text_field :website, class: 'form-control', placeholder: 'http://coffeecabanapvd.com' %>
+        </div>
+        <div class="col-xs-12"></div>
+        <div class="actions text-center col-xs-12">
+          <%= f.submit "SUBMIT", class:"btn btn-primary btn-md", type: "submit" %> 
+          <br>
+          <%= link_to 'Cancel', spots_path %>
+        </div>
+      <% end %>
+
+      </div>
+
+</div>

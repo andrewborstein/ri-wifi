@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @spot.name %>
+</p>
+
+<p>
+  <strong>SSID:</strong>
+  <%= @spot.ssid %>
+</p>
+
+<p>
+  <strong>PW:</strong>
+  <% if @spot.pw? %>
+    <%= @spot.pw %>
+  <% end %>
+  <% if @spot.pw_open? %>
+    [OPEN]
+  <% end %>
+  <% if @spot.pw_login? %>
+    [LOGIN PAGE]
+  <% end %>
+</p>
+
+<p>
+  <strong>DL:</strong>
+  <%= @spot.dl %>
+</p>
+
+<p>
+  <strong>UL:</strong>
+  <%= @spot.ul %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @spot.address %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @spot.website %>
+</p>
+
+<p>
+  <strong>Yelp:</strong>
+  <%= @spot.yelp %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @spot.facebook %>
+</p>
+
+<%= link_to 'Edit', edit_spot_path(@spot) %> |
+<%= link_to 'Back', spots_path %>

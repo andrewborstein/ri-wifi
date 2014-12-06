@@ -1,0 +1,10 @@
+<h1>Favorite WiFi spots.</h1>
+
+<% if user_signed_in? %>
+	Hi, <%= current_user.name %>
+<% else %>
+	<h3>Want to save all your fav WiFi spots?</h3>
+	<br>
+	<p><%= link_to "LOG IN", user_session_path, class: "btn btn-default btn-lg" %> 
+	<%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+<% end %>

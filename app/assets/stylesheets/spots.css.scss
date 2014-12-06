@@ -1,0 +1,26 @@
+// Place all the styles related to the spots controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.spots .panel-heading {
+	padding: 0;
+}
+.spots .panel-heading a .panel-title  {
+	color: white;
+	padding: 10px 15px
+}
+.spots .panel-heading a .panel-title:hover {
+	background-color: #0c5446
+}
+.spots .panel-heading a {
+	text-decoration: none
+}
+.spots .panel-title h3 {
+	font-weight: 100;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin: 10px 0
+}
+.sort-buttons {
+	padding: 0 0 30px;
+}

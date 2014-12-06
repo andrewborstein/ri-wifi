@@ -1,0 +1,134 @@
+
+  <%= render 'layouts/welcome' %>
+  <%= render 'layouts/sort' %>
+
+    <% @spots.order(dl: :desc).each do |spot| %>
+
+      <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+        <div class="panel panel-primary spots">
+          <div class="panel-heading">
+          <%= link_to spot do %>
+            <div class="panel-title text-center"><h3><%= spot.name %></h3></div>
+          <% end %>
+          </div>
+          <div class="panel-body">
+
+            <div class="row">
+              <div class="internet col-sm-12">
+                <div class="row">
+                  
+                  <div class="speed col-sm-6 col-xs-12">
+                    <div class="speed col-xs-3">
+                      <div class="row">
+                        <i class="fa fa-tachometer fa-3x"></i>
+                      </div>
+                    </div>
+                    <div class="speed col-xs-9">
+                      <div class="row">
+                        <div><span class="text-primary"><%= spot.dl %> mb </span><i class="fa fa-arrow-down"></i></div>
+                        <div><span class="text-primary"><%= spot.ul %> mb </span><i class="fa fa-arrow-up"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="gap visible-xs col-xs-12" style="padding: 15px 0 0"></div>
+
+                  <div class="speed col-sm-6 col-xs-12">
+                    <div class="speed col-xs-3">
+                      <div class="row">
+                        <i class="fa fa-wifi fa-3x"></i>
+                      </div>
+                    </div>
+                    <div class="logins col-xs-9">
+                      <div class="row">
+                        <div>SSID: <span class="text-primary"><%= spot.ssid %></span></div>
+                        <div>
+                          PW: <span class="text-primary">
+                          <% if spot.pw? %>
+                            <%= spot.pw %>
+                          <% end %>
+                          <% if spot.pw_open? %>
+                            [OPEN]
+                          <% end %>
+                          <% if spot.pw_login? %>
+                            [LOGIN PAGE]
+                          <% end %>
+                          </span>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              
+              <hr class="col-sm-12">
+
+              <div class="gap visible-xs col-xs-12" style="padding: 10px 0"></div>
+              
+              <div class="distance col-sm-12">
+                <div class="row">
+                  <div class="speed col-xs-12">
+                    <iframe src="https://maps.google.com/maps?&amp;q=<%= spot.address %>&amp;output=embed" width="100%" height="150px" frameborder="0" style="border:0"></iframe>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+
+            <div class="row">
+              <div class="gap col-xs-12" style="padding: 10px 0"></div>
+              <div class="links col-sm-12">
+                <div class="row">
+                  <div class="btn-group btn-group-justified col-xs-12" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+                      <% if spot.yelp? %>
+                        <%= link_to spot.yelp, class: 'btn btn-default', target: '_blank' do %>
+                        <i class="fa fa-yelp"></i><span class="hidden-xs"> Yelp</span>
+                        <% end %>
+                      <% else %>
+                        <button class="btn btn-default">
+                          <i class="fa fa-yelp"></i><span class="hidden-xs">  Yelp</span>
+                        </button>
+                      <% end %>
+                    </div>
+                    <div class="btn-group" role="group">
+                      <% if spot.facebook? %>
+                        <%= link_to spot.facebook, class: 'btn btn-default', target: '_blank' do %>
+                        <i class="fa fa-facebook"></i><span class="hidden-xs">  Facebook</span>
+                        <% end %>
+                      <% else %>
+                        <button class="btn btn-default">
+                          <i class="fa fa-facebook"></i><span class="hidden-xs">  Facebook</span>
+                        </button>
+                      <% end %>
+                    </div>
+                    <div class="btn-group" role="group">
+                      <% if spot.website? %>  
+                        <%= link_to spot.website, class: 'btn btn-default', target: '_blank' do %>
+                        <i class="fa fa-globe"></i><span class="hidden-xs">  Website</span>
+                        <% end %>
+                      <% else %>
+                        <button class="btn btn-default disabled">
+                          <i class="fa fa-globe"></i><span class="hidden-xs">  Website</span>
+                        </button>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+
+

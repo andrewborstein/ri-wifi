@@ -1,0 +1,7 @@
+<h1>Editing spot</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'View', @spot %> |
+<%= link_to 'Delete', @spot, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', spots_path %>
