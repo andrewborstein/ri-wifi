@@ -4,7 +4,7 @@
     <div class="text-center col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
         <h3>Hello, <%= current_user.name %>.</h3> 
         <br>
-        <p><%= link_to 'Add WiFi Spot', new_spot_path, class: "btn btn-primary btn-lg" %></p>
+        <p><%= link_to 'Add WiFi Spot', new_spot_path, class: "btn btn-default dark btn-lg" %></p>
     </div>
     <!-- Otherwise... -->
     <% else %>
@@ -12,6 +12,6 @@
         <h1>Welcome to RI WiFi.</h1>
         <br>
         <p><%= link_to "LOG IN", user_session_path, class: "btn btn-default btn-lg" %> 
-        <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-default btn-lg" %></p>
+        <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-default dark btn-lg" %></p>
     </div>
     <% end %>
