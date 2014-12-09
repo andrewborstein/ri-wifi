@@ -3,12 +3,25 @@
 $body-bg:                    #ecf0f1;
 $font-family-sans-serif:     'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $navbar-height:              45px;
-$navbar-default-bg:          #16a085;
+$navbar-default-bg:          #7f8c8d;
 $navbar-default-link-color:  white;
 $navbar-default-brand-color: white;
-$brand-primary:              #16a085;
 $jumbotron-bg:               white;
 $grid-float-breakpoint:		 320px;
+
+$panel-default-heading-bg:   #7f8c8d;
+$panel-info-heading-bg:  	 #2980b9;
+$panel-primary-heading-bg:   #16a085; 	 
+$panel-success-heading-bg:   #f39c12;
+$panel-warning-heading-bg:   #d35400;
+$panel-danger-heading-bg:    #c0392b;
+
+$brand-default:   			 #7f8c8d;
+$brand-info:  	 			 #2980b9;
+$brand-primary:              #16a085;	 
+$brand-success:   			 #f39c12;
+$brand-warning:   			 #d35400;
+$brand-danger:    			 #c0392b;
 
 @import 'bootstrap';
 
@@ -24,4 +37,42 @@ $grid-float-breakpoint:		 320px;
 }
 .jumbotron {
 	padding: 30px;
+}
+
+.spots.panel-default .panel-heading a .panel-title:hover {
+	background-color: darken($panel-default-heading-bg, 10%);
+}
+.spots.panel-info .panel-heading a .panel-title:hover {
+	background-color: darken($panel-info-heading-bg, 10%)
+}
+.spots.panel-primary .panel-heading a .panel-title:hover {
+	background-color: darken($panel-primary-heading-bg, 10%)
+}
+.spots.panel-success .panel-heading a .panel-title:hover {
+	background-color: darken($panel-success-heading-bg, 10%)
+}
+.spots.panel-warning .panel-heading a .panel-title:hover {
+	background-color: darken($panel-warning-heading-bg, 10%)
+}
+.spots.panel-danger .panel-heading a .panel-title:hover {
+	background-color: darken($panel-danger-heading-bg, 10%)
+}
+
+.spots.panel-default span.text-primary {
+	color: $brand-default
+}
+.spots.panel-info span.text-primary {
+	color: $brand-info
+}
+.spots.panel-primary span.text-primary{
+	color: $brand-primary
+}
+.spots.panel-success span.text-primary {
+	color: $brand-success
+}
+.spots.panel-warning span.text-primary {
+	color: $brand-warning
+}
+.spots.panel-danger span.text-primary {
+	color: $brand-danger
 }

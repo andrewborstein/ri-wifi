@@ -8,7 +8,21 @@
     <% @spots.each do |spot| %>
 
       <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
-        <div class="panel panel-primary spots">
+        <% if spot.dl < 5 %>
+        <div class="panel panel-default spots fastest">
+        <% end %>
+        <% if spot.dl < 10 && spot.dl > 4 %>
+        <div class="panel panel-info spots fastest">
+        <% end %>
+        <% if spot.dl < 20 && spot.dl > 9 %>
+        <div class="panel panel-success spots fastest">
+        <% end %>
+        <% if spot.dl < 50 && spot.dl > 19 %>
+        <div class="panel panel-warning spots fastest">
+        <% end %>
+        <% if spot.dl > 49 %>
+        <div class="panel panel-danger spots fastest">
+        <% end %>
           <div class="panel-heading">
           <%= link_to spot do %>
             <div class="panel-title text-center"><h3><%= spot.name %></h3></div>
