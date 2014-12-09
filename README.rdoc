@@ -1,5 +1,3 @@
-== README
-
-RI WiFi
+== RI WiFi
 
 Find, share, and save the best WiFi spots in RI.
