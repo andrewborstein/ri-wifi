@@ -1,13 +1,16 @@
 <div class="sort-buttons text-center col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
-	<div class="btn-group btn-grp-justified">
-		<%= link_to fastest_path, class: 'btn btn-default' do %>
-	    	<i class="fa fa-tachometer"></i><span class="hidden-xs"> Fastest</span>
-	    <% end %>
-		<%= link_to fastest_path, class: 'btn btn-default disabled' do %>
-	    	<i class="fa fa-location-arrow"></i><span class="hidden-xs"> Closest</span>
-	    <% end %>
-	    <%= link_to root_path, class: 'btn btn-default' do %>
-	    	<i class="fa fa-list-ul"></i><span class="hidden-xs"> Alphabetical</span>
-	    <% end %>
+	<h3>Filter By</h3>
+	<div class="text-center col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+		<div class="btn-group btn-grp-justified">
+			<%= link_to root_path, class: 'btn btn-default' do %>
+		    	<i class="fa fa-list-ul"></i> Name
+		    <% end %>
+			<%= link_to fastest_path, class: 'btn btn-default disabled' do %>
+		    	<i class="fa fa-location-arrow"></i> Distance
+		    <% end %>
+		    <%= link_to fastest_path, class: 'btn btn-default' do %>
+		    	<i class="fa fa-tachometer"></i> Speed
+		    <% end %>
+		</div>
 	</div>
 </div>
