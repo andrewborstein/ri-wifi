@@ -1,57 +1,53 @@
-<p id="notice"><%= notice %></p>
+<div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+  <div class="panel panel-default">
 
-<p>
-  <strong>Name:</strong>
-  <%= @spot.name %>
-</p>
+    <div class="panel-heading">
+      <h1 class="text-center">Add a WiFi Spot</h1>
+    </div>
 
-<p>
-  <strong>SSID:</strong>
-  <%= @spot.ssid %>
-</p>
+    <div class="panel-body">
+      <div class="location form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+        <div class="page-header">
+          <h1>Location</h1>
+        </div>
+        <h4><strong>Name:</strong><span class="text-primary"> <%= @spot.name %></span></h4>
+        <h4><strong>Address:</strong><span class="text-primary"> <%= @spot.address %></span></h4>
+      </div>
+      <div class="wifi form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+        <div class="page-header">
+          <h1>WiFi</h1>
+        </div>
+        <h4><strong>SSID:</strong><span class="text-primary"> <%= @spot.ssid %></span></h4>
+        <h4><strong>PW:</strong><span class="text-primary"> 
+          <% if @spot.pw? %>
+            <%= @spot.pw %>
+          <% end %>
+          <% if @spot.pw_open? %>
+            [OPEN]
+          <% end %>
+          <% if @spot.pw_login? %>
+            [LOGIN PAGE]
+          <% end %>
+        </h4>
+        <h4><strong>Download:</strong><span class="text-primary"> <%= @spot.dl %></span></h4>
+        <h4><strong>Upload:</strong><span class="text-primary"> <%= @spot.ul %></span></h4>
+      </div>
+      <div class="links form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+        <div class="page-header">
+          <h1>Links</h1>
+        </div>
+        <h4><strong>Yelp:</strong><span class="text-primary"> <%= @spot.yelp %></span></h4>
+        <h4><strong>Facebook:</strong><span class="text-primary"> <%= @spot.facebook %></span></h4>
+        <h4><strong>Website:</strong><span class="text-primary"> <%= @spot.website %></span></h4>
+        <div class="actions text-center col-xs-12">
+          <%= link_to 'Edit', edit_spot_path(@spot), class:"btn btn-primary btn-md" %>
+          <br>
+          <%= link_to 'Back', spots_path %>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>PW:</strong>
-  <% if @spot.pw? %>
-    <%= @spot.pw %>
-  <% end %>
-  <% if @spot.pw_open? %>
-    [OPEN]
-  <% end %>
-  <% if @spot.pw_login? %>
-    [LOGIN PAGE]
-  <% end %>
-</p>
 
-<p>
-  <strong>DL:</strong>
-  <%= @spot.dl %>
-</p>
-
-<p>
-  <strong>UL:</strong>
-  <%= @spot.ul %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @spot.address %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @spot.website %>
-</p>
-
-<p>
-  <strong>Yelp:</strong>
-  <%= @spot.yelp %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @spot.facebook %>
-</p>
-
-<%= link_to 'Edit', edit_spot_path(@spot) %> |
-<%= link_to 'Back', spots_path %>
