@@ -61,11 +61,7 @@
                 </div>
                 <div class="distance col-xs-12">
                   <span class="text-primary">
-<<<<<<< HEAD
-                  <%= spot.distance_from(icanhazgeo) %> mi away
-=======
-                  <%= spot.distance_from(icanhazgeo).round(2) %> mi away
->>>>>>> origin/master
+                  <%= spot.distance_from(icanhazgeo).to_f.round(2) %> mi away
                   </span>
                 </div>
               </div>
