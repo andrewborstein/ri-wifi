@@ -14,13 +14,15 @@
         <h4><strong>Address:</strong><span class="text-primary"> <%= @spot.address %></span></h4>
         <h4><strong>Latitude</strong><span class="text-primary"> <%= @spot.latitude %></span> </h4>
         <h4><strong>Longitude:</strong><span class="text-primary"> <%= @spot.longitude %></span></h4>
+        <!--
         <h4><strong>Nearby Spots</strong></h4>
           <ul>
-            <% for spot in @spot.nearbys(50) %>
-              <li><%= link_to spot.name, spot %> (<%= spot.distance.round(2) %> mi)</li>
-            <% end %>
+            <%# for spot in @spot.nearbys(50) %>
+              <li><%#= link_to spot.name, spot %> (<%#= spot.distance.round(2) %> mi)</li>
+            <%# end %>
           </ul>
         </h4>
+        -->
         <div class="page-header">
           <h2>Distance</h2>
         </div>
