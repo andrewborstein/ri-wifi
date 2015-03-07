@@ -28,7 +28,7 @@
         </div>
         <h4><strong>ICanHazIP:</strong><span class="text-primary"> <%= icanhazip %></span></h4>
         <h4><strong>ICanHazGeo:</strong><span class="text-primary"> <%= icanhazgeo %></span></h4>
-        <h4><strong>ICanHazDist:</strong><span class="text-primary"> <%= spot.distance_from(icanhazgeo).round(2) %> mi</span></h4>   
+        <h4><strong>ICanHazDist:</strong><span class="text-primary"> <%= @spot.distance_from(icanhazgeo).to_i.round(2) %> mi</span></h4>   
       </div>
       <div class="wifi form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
         <div class="page-header">
