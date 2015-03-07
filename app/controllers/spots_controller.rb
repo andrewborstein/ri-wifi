@@ -3,6 +3,8 @@ class SpotsController < ApplicationController
   helper_method :icanhazip
   helper_method :icanhazgeo
   helper_method :icanhazapt
+  helper_method :ip_address
+  helper_method :ip_address_geo
   respond_to :html
 
   def index
@@ -51,6 +53,16 @@ class SpotsController < ApplicationController
   def nearby
     @spots = Spot.all.order(latitude: :asc)
     respond_with(@spots)
+  end
+
+  def ip_address
+    request.remote_ip
+    @ip_normal = request.remote_ip
+  end
+
+  def ip_address_geo
+    ip = request.remote_ip
+    @geo = Geocoder.coordinates(ip)
   end
 
   def icanhazip
