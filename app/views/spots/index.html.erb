@@ -1,9 +1,6 @@
 
   <%= render 'layouts/welcome' %>
-
-  <%= render 'layouts/sort' %>
-
-
+  <%#= render 'layouts/sort' %>
 
     <% @spots.each do |spot| %>
 
@@ -28,7 +25,7 @@
         <% end %>
           <div class="panel-heading">
           <%= link_to spot do %>
-            <div class="panel-title text-center"><h3><%= spot.name %></h3></div>
+            <div class="panel-title text-center"><h3><%= spot.name %> (<%= spot.distance_from(icanhazgeo).round(2) %> mi away)</h3></div>
           <% end %>
           </div>
           <div class="panel-body">
@@ -57,9 +54,14 @@
               
               <div class="distance col-sm-6">
                 <h4>Location <i class="fa fa-map-marker fa-md"></i></h4>
-                <div class="speed col-xs-12">
+                <div class="address col-xs-12">
                   <span class="text-primary">
                   <%= link_to spot.address, "https://google.com/maps/place/#{spot.address}" %>
+                  </span>
+                </div>
+                <div class="distance col-xs-12">
+                  <span class="text-primary">
+                  <%= spot.distance_from(icanhazgeo).round(2) %> mi away
                   </span>
                 </div>
               </div>
@@ -110,7 +112,7 @@
               </div>
             </div>
             
-            
+            <p class="last-updated muted text-center">Last Updated: <%= spot.updated_at.strftime("%m/%d/%Y") %></p>
 
           </div>
         </div>

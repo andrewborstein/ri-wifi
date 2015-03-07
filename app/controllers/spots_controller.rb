@@ -1,11 +1,19 @@
 class SpotsController < ApplicationController
   before_action :set_spot, only: [:show, :edit, :update, :destroy]
-
+  helper_method :icanhazip
+  helper_method :icanhazgeo
+  helper_method :icanhazapt
   respond_to :html
 
   def index
-    @spots = Spot.all.order(name: :asc)
-    respond_with(@spots)
+    if params[:search].present?
+      @spots = Spot.near(params[:search])
+      respond_with(@spots)
+    else
+      @spots = Spot.all.order(name: :asc)
+      respond_with(@spots)
+      render "Sorry, no spots with that search term. We think."
+    end
   end
 
   def show
@@ -41,12 +49,41 @@ class SpotsController < ApplicationController
     respond_with(@spots)
   end
 
+  def nearby
+    @spots = Spot.all.order(latitude: :asc)
+    respond_with(@spots)
+  end
+
+  def icanhazip
+    require 'net/http'
+
+    url = URI.parse('http://icanhazip.com/')
+    req = Net::HTTP::Get.new(url.to_s)
+    res = Net::HTTP.start(url.host, url.port) {|http|
+      http.request(req)
+    }
+    ip = res.body.gsub("\n","")
+    @ip = ip
+  end
+
+  def icanhazgeo
+    require 'net/http'
+
+    url = URI.parse('http://icanhazip.com/')
+    req = Net::HTTP::Get.new(url.to_s)
+    res = Net::HTTP.start(url.host, url.port) {|http|
+      http.request(req)
+    }
+    ip = res.body.gsub("\n","")
+    @geo = Geocoder.coordinates(ip)
+  end
+
   private
     def set_spot
       @spot = Spot.find(params[:id])
     end
 
     def spot_params
-      params.require(:spot).permit(:name, :ssid, :pw, :pw_open, :pw_login, :dl, :ul, :address, :website, :yelp, :facebook)
+      params.require(:spot).permit(:name, :ssid, :pw, :pw_open, :pw_login, :dl, :ul, :address, :latitude, :longitude, :icanhazip, :website, :yelp, :facebook)
     end
 end

@@ -48,10 +48,13 @@ gem 'masonry-rails', '~> 0.2.4'
 gem 'font-awesome-rails', '~> 4.2.0'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
+gem 'geocoder'
+gem 'gemcutter', '~> 0.7.1'
 
 
 group :development, :test do
      gem 'sqlite3'
+     gem 'pry-rails'
 end
 
 group :production do

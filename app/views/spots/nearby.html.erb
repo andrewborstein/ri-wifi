@@ -1,7 +1,7 @@
 
   <%= render 'layouts/welcome' %>
 
-    <% @spots.order(dl: :desc).each do |spot| %>
+    <% @spots.each do |spot| %>
 
       <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
         <% if spot.dl < 4 %>

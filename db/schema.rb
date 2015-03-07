@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205234101) do
+ActiveRecord::Schema.define(version: 20141209235539) do
 
   create_table "spots", force: true do |t|
     t.string   "name"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20141205234101) do
     t.datetime "updated_at"
     t.boolean  "pw_open"
     t.boolean  "pw_login"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "users", force: true do |t|
@@ -43,6 +45,8 @@ ActiveRecord::Schema.define(version: 20141205234101) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
