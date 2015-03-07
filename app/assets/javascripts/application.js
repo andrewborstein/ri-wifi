@@ -16,3 +16,20 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .
+
+var x = $(".jumbotron");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    lat = Math.round(position.coords.latitude * 1000) / 1000
+    lon = Math.round(position.coords.longitude * 1000) / 1000
+    var msg = "JS says your coordinates are <strong>[" + lat + ", " + lon + "]</strong>";
+    console.log(msg);
+    document.getElementById('jsLocation').innerHTML = msg;
+}
+getLocation()

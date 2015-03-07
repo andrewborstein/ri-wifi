@@ -37,4 +37,12 @@ Rails.application.configure do
 
   # Required for heroku - set to actual hostname
   config.action_mailer.default_url_options = { host: 'localhost', port: 3002 }
+
+  # IP Address at Mom's house
+  class ActionDispatch::Request
+    def ip
+      "72.209.0.95"
+    end
+  end
+
 end

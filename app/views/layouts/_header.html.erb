@@ -14,7 +14,9 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav navbar-right">
+			<li><%= link_to raw('<i class="fa fa-plus fa-lg"></i><span class="hidden-xs">&nbsp; Add Spot</span>'), new_spot_path %></li>
 			<li><%= link_to raw('<i class="fa fa-location-arrow fa-lg"></i><span class="hidden-xs">&nbsp; Nearby</span>'), nearby_path %></li>
+			<li><%= link_to raw('<i class="fa fa-tachometer fa-lg"></i><span class="hidden-xs">&nbsp; Fastest</span>'), fastest_path %></li>
 			<li><%= link_to raw('<i class="fa fa-search fa-lg"></i><span class="hidden-xs">&nbsp; Search</span>'), search_path %></li>	
 			<li><%= link_to raw('<i class="fa fa-star fa-lg"></i><span class="hidden-xs">&nbsp; Favs</span>'), favs_path %></li>
 			<% if user_signed_in? %>

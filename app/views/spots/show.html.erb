@@ -12,6 +12,21 @@
         </div>
         <h4><strong>Name:</strong><span class="text-primary"> <%= @spot.name %></span></h4>
         <h4><strong>Address:</strong><span class="text-primary"> <%= @spot.address %></span></h4>
+        <h4><strong>Latitude</strong><span class="text-primary"> <%= @spot.latitude %></span> </h4>
+        <h4><strong>Longitude:</strong><span class="text-primary"> <%= @spot.longitude %></span></h4>
+        <h4><strong>Nearby Spots</strong></h4>
+          <ul>
+            <% for spot in @spot.nearbys(50) %>
+              <li><%= link_to spot.name, spot %> (<%= spot.distance.round(2) %> mi)</li>
+            <% end %>
+          </ul>
+        </h4>
+        <div class="page-header">
+          <h2>Distance</h2>
+        </div>
+        <h4><strong>ICanHazIP:</strong><span class="text-primary"> <%= icanhazip %></span></h4>
+        <h4><strong>ICanHazGeo:</strong><span class="text-primary"> <%= icanhazgeo %></span></h4>
+        <h4><strong>ICanHazDist:</strong><span class="text-primary"> <%= spot.distance_from(icanhazgeo).round(2) %> mi</span></h4>   
       </div>
       <div class="wifi form-group col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
         <div class="page-header">

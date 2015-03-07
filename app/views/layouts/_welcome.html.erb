@@ -2,16 +2,22 @@
     <!-- Users must be signed in to create pins -->
     <% if user_signed_in? %>     
     <div class="text-center col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
-        <h3>Hello, <%= current_user.name %>.</h3> 
-        <br>
-        <p><%= link_to 'Add WiFi Spot', new_spot_path, class: "btn btn-default dark btn-lg" %></p>
+        <h3>Hello, <%= current_user.name %>.</h3>
+        <h4>Your IP Address (<strong><%= icanhazip %></strong>) geocodes to coordinates of <strong><%= icanhazgeo %></strong></h4>
+        <h4 id="jsLocation"></h4>
     </div>
     <!-- Otherwise... -->
     <% else %>
     <div class="jumbotron text-center">
         <h1>Welcome to RI WiFi.</h1>
+        <h4>Your IP Address (<strong><%= icanhazip %></strong>) geocodes to coordinates of <strong><%= icanhazgeo %></strong></h4>
+        <h4 id="jsLocation"></h4>
         <br>
         <p><%= link_to "LOG IN", user_session_path, class: "btn btn-default btn-lg" %> 
         <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-default dark btn-lg" %></p>
     </div>
     <% end %>
+
+    <div class="text-center col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
+        <hr>
+    </div>

@@ -4,11 +4,12 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'spots#index'
-  get 'nearby' => 'pages#nearby'
   get 'search' => 'pages#search'
   get 'favs' => 'pages#favs'
   get 'about' => 'pages#about'
   get 'fastest' => 'spots#fastest'
+  get 'nearby' => 'spots#nearby'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

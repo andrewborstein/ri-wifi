@@ -1,1 +1,9 @@
-<h1>Search WiFi spots.</h1>
+<h1>Search WiFi Spots</h1>
+<div class="input-group sort-buttons col-xs-10 col-sm-6 col-md-4 ">
+  <%= form_tag spots_path, :method => :get, class: 'input-group' do %>
+      <%= text_field_tag :search, params[:search], class: 'form-control' %>
+      <span class='input-group-btn'>
+        <%= submit_tag "Search", :name => nil, class: 'btn btn-default' %>
+      </span>
+  <% end %>
+</div>
