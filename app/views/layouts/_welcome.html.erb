@@ -10,7 +10,7 @@
     <% else %>
     <div class="jumbotron text-center">
         <h1>Welcome to RI WiFi.</h1>
-        <h4>Your IP Address (<strong><%= icanhazip %></strong>) geocodes to coordinates of <strong><%= icanhazgeo %></strong></h4>
+        <h4>The server's IP Address (<strong><%= ip_address %></strong>) geocodes to coordinates of <strong><%= ip_address_geo %></strong></h4>
         <h4 id="jsLocation"></h4>
         <br>
         <p><%= link_to "LOG IN", user_session_path, class: "btn btn-default btn-lg" %> 
