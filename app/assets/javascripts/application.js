@@ -28,7 +28,7 @@ function getLocation() {
 function showPosition(position) {
     lat = Math.round(position.coords.latitude * 1000) / 1000
     lon = Math.round(position.coords.longitude * 1000) / 1000
-    var msg = "JS says your coordinates are <strong>[" + lat + ", " + lon + "]</strong>";
+    var msg = "Your actual coordinates are <strong>[" + lat + ", " + lon + "]</strong>";
     console.log(msg);
     document.getElementById('jsLocation').innerHTML = msg;
 }
