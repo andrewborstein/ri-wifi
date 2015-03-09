@@ -25,7 +25,7 @@
         <% end %>
           <div class="panel-heading">
           <%= link_to spot do %>
-            <div class="panel-title text-center"><h3><%= spot.name %> (<%= spot.distance_from(icanhazgeo).to_f.round(2) %> mi away)</h3></div>
+            <div class="panel-title text-center"><h3><%= spot.name %> (<%= spot.distance_from(ip_address_geo).to_f.round(2) %> mi away)</h3></div>
           <% end %>
           </div>
           <div class="panel-body">
@@ -61,7 +61,7 @@
                 </div>
                 <div class="distance col-xs-12">
                   <span class="text-primary">
-                  <%= spot.distance_from(icanhazgeo).to_f.round(2) %> mi away
+                  <%= spot.distance_from(icanhazgeo).to_f.round(2) %> mi away (according to icanhazip)
                   </span>
                 </div>
               </div>

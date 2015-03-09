@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209235539) do
+ActiveRecord::Schema.define(version: 20150309145601) do
+
+  create_table "ip_records", force: true do |t|
+    t.string   "ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spots", force: true do |t|
     t.string   "name"

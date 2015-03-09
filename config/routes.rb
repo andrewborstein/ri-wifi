@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'spots#index'
+  # root 'ipresponder#index'
   get 'search' => 'pages#search'
   get 'favs' => 'pages#favs'
   get 'about' => 'pages#about'

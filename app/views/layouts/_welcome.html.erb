@@ -3,7 +3,7 @@
     <% if user_signed_in? %>     
     <div class="text-center col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-xs-12">
         <h3>Hello, <%= current_user.name %>.</h3>
-        <h4>The server's IP Address (<strong><%= ip_address %></strong>) geocodes to coordinates of <strong><%= ip_address_geo %></strong></h4>
+        <h4>Your IP Address (<strong><%= ip_address %></strong>), according to request.remote_ip, geocodes to coordinates of <strong><%= ip_address_geo %></strong></h4>
         <h4 id="jsLocation"></h4>
     </div>
     <!-- Otherwise... -->
