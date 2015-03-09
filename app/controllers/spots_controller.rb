@@ -51,7 +51,7 @@ class SpotsController < ApplicationController
   end
 
   def nearby
-    @spots = Spot.all.order(latitude: :asc)
+    @spots = Spot.all.order(latitude: :desc)
     respond_with(@spots)
   end
 
